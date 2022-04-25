@@ -36,8 +36,7 @@ def MatrixFilling(matrix,RnaSeq):
 
 #"GGGAAAUCC"
 rnaseq=input("Enter RNA Sequence : ").upper()
-matrix=ZeroMatrix(rnaseq)
-matrix=MatrixFilling(matrix,rnaseq)
+matrix=MatrixFilling(ZeroMatrix(rnaseq),rnaseq)
 print(matrix)
 
 
