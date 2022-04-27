@@ -1,5 +1,5 @@
 import numpy as np
-
+#MA7DSH YL3AB F AY HAGA 3ASHAN HAYDRBKO ALLAHUMA BALGHT!
 Pairsdict={  'G,C' : 1,  'A,U':1,  'G,U':1, 'C,G' : 1   ,'U,A':1,  'U,G':1}
 
 def ZeroMatrix(seq):
