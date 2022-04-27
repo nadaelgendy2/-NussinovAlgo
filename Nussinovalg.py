@@ -57,7 +57,7 @@ def MatrixFilling(matrix,RnaSeq):
                         if matrix[row][column] == birmax:
                             birind = {row,column}
 
-                #print(birind)
+                #print(birind,diagind,belowind,leftind)
 
             else:
                 matrix[row][column] = -1
