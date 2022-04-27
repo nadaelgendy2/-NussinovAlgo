@@ -29,11 +29,19 @@ def MatrixFilling(matrix,RnaSeq):
                 Diagnoalindex = matrix[row + 1][column - 1] +Check(seq)
                 bir=[]
                 birmax=0
+
                 for t in range(row,column):
                   bir.append(matrix[row][t]+matrix[t + 1][column])
                 for t in range(row,column):
                     birmax=max(bir)
+
                 matrix[row][column] = max(Leftindex,belowindex,Diagnoalindex,birmax)  # max of all
+               
+                max_indices = {}
+                for t in range(row, column):
+                    max_indices={row,column}
+                #print(max_indices)
+
             else:
                 matrix[row][column] = -1
     return matrix
