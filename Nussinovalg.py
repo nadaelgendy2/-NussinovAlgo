@@ -27,17 +27,23 @@ def MatrixFilling(matrix,RnaSeq):
                 belowindex = matrix[row + 1][column]
                 seq=RnaSeq[row]+','+ RnaSeq[column]
                 Diagnoalindex = matrix[row + 1][column - 1] +Check(seq)
-               # rc = max([matrix[row][t] + matrix[t + 1][column] for t in range(row, column)])  # 4th rule #pifurcation
-                matrix[row][column] = max(Leftindex,belowindex,Diagnoalindex)  # max of all
+                bir=[]
+                birmax=0
+                for t in range(row,column):
+                  bir.append(matrix[row][t]+matrix[t + 1][column])
+                for t in range(row,column):
+                    birmax=max(bir)
+                matrix[row][column] = max(Leftindex,belowindex,Diagnoalindex,birmax)  # max of all
             else:
                 matrix[row][column] = -1
     return matrix
 
 
 #"GGGAAAUCC"
+#"CGGACCCAGACUUUC"
+
 rnaseq=input("Enter RNA Sequence : ").upper()
-matrix=MatrixFilling(ZeroMatrix(rnaseq),rnaseq)
+matrix=ZeroMatrix(rnaseq)
+matrix=MatrixFilling(matrix,rnaseq)
 print(matrix)
-
-
 
