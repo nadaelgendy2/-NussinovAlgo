@@ -1,3 +1,4 @@
+import numpy
 import numpy as np
 #MA7DSH YL3AB F AY HAGA 3ASHAN HAYDRBKO ALLAHUMA BALGHT!
 Pairsdict={  'G,C' : 1,  'A,U':1,  'G,U':1, 'C,G' : 1   ,'U,A':1,  'U,G':1}
@@ -29,18 +30,34 @@ def MatrixFilling(matrix,RnaSeq):
                 Diagnoalindex = matrix[row + 1][column - 1] +Check(seq)
                 bir=[]
                 birmax=0
-
                 for t in range(row,column):
                   bir.append(matrix[row][t]+matrix[t + 1][column])
                 for t in range(row,column):
                     birmax=max(bir)
 
                 matrix[row][column] = max(Leftindex,belowindex,Diagnoalindex,birmax)  # max of all
-               
-                max_indices = {}
-                for t in range(row, column):
-                    max_indices={row,column}
-                #print(max_indices)
+
+                #saving the indices of the max each time
+                leftind={}
+                belowind = {}
+                diagind = {}
+                birind = {}
+                if matrix[row][column] == Leftindex:
+                    leftind={row,column}
+
+                elif matrix[row][column] == belowindex:
+                    belowind = {row, column}
+
+                elif matrix[row][column] == Diagnoalindex:
+                    diagind = {row,column}
+
+                else:
+                    for k in range(row + 1, column - 1):
+
+                        if matrix[row][column] == birmax:
+                            birind = {row,column}
+
+                #print(birind)
 
             else:
                 matrix[row][column] = -1
