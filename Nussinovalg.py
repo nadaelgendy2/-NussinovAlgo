@@ -1,14 +1,14 @@
 import numpy
 import numpy as np
-#MA7DSH YL3AB F AY HAGA 3ASHAN HAYDRBKO ALLAHUMA BALGHT!
+
 Pairsdict={  'G,C' : 1,  'A,U':1, 'C,G' : 1,'U,A':1,'G,U':1, 'U,G':1}
 
 def ZeroMatrix(seq):
 
-    #print( [[0 for row in range(row)] for column in range(column)])
+    
     matrix=np.zeros((len(seq),len(seq)),int)
     np.fill_diagonal(matrix,0)
-   # print(matrix)
+  
     return matrix
 
 
